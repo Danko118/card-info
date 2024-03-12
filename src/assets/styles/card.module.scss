@@ -1,0 +1,93 @@
+.position {
+    position: absolute;
+    top: 185px;
+    left: -130px;
+    display: flex;
+    gap: 35px;
+    flex-direction: column;
+    & .cardFront , & .cardBack {
+        
+        filter: brightness(0.9);
+        transition: 0.2s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        width: 447px;
+        height: 245px;
+        position: relative;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba($color: #000000, $alpha: .35);
+        &:hover {
+            filter: brightness(1);
+        }
+    }
+    .cardFront {
+        transform: translateX(-120px);
+        z-index: 10;
+    }
+}
+
+.credentials {
+    & * {
+        user-select: none;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 7px rgba($color: #000000, $alpha: .6);
+    }
+    & h1 {
+        letter-spacing: 4px;
+    }
+    & img {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    & .number {
+        color: #fff;
+        position: absolute;
+        bottom: 80px;
+        left: 30px;
+    }
+    & .sub {
+        color: #fff;
+        width: 387px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+    }
+    & .cvv {
+        position: absolute;
+        color: #fff;
+        top: 110px;
+        right: 50px;
+    }
+}
+
+
+
+@media screen and (max-width:1320px) {
+    .position {
+        justify-content: center;
+        align-items: center;
+        top: -370px;
+        left: calc(50% - 200px);
+        transform: scale(0.7);
+    }
+    .cardFront , .cardBack {
+        pointer-events: none;
+    }
+    .cardFront {
+        filter: brightness(1) !important;
+        transform: translateX(-120px) translateY(200px) !important;
+    }
+    .cardBack {
+        filter: brightness(0.8);
+    }
+}
+
+
+@media screen and (max-width:450px) {
+    .position {
+        transform: scale(0.5);
+        top: -340px;
+    }
+}

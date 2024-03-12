@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import UiBackground from "./components/background";
+import UiInteractive from "./components/interactive";
+import Style from "./assets/styles/app.module.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={Style.wrapper}>
+      <UiBackground />
+      <UiInteractive />
     </div>
   );
 }
